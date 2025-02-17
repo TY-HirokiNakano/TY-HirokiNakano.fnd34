@@ -47,7 +47,8 @@ const arrayOfPartArea = [
   {partName: "フード", xMin: 0.15, xMax: 0.36, yMin: 0.29, yMax: 0.52}, 
   {partName: "グリル", xMin: 0.14, xMax: 0.31, yMin: 0.61, yMax: 0.75},
   {partName: "ヘッドランプ", xMin: 0.40, xMax: 0.46, yMin: 0.36, yMax: 0.50},
-  {partName: "ヘッドランプ", xMin: 0.07, xMax: 0.13, yMin: 0.33, yMax: 0.48}
+  {partName: "ヘッドランプ", xMin: 0.07, xMax: 0.13, yMin: 0.33, yMax: 0.48},
+  {partName: "ウインドシールドガラス", xMin: 0.25, xMax: 0.62, yMin: 0.07, yMax: 0.28}
 ]
 
 
@@ -92,3 +93,16 @@ imgOfCar.addEventListener("mousemove",function(event) {
   // document.getElementsByClassName("gray-box")[0].style.backgroundColor = "yellow";
   // console.log(event.offsetX);
 });
+
+const btn = document.getElementById("button-cheating");
+
+btn.addEventListener("click", function() {
+  const cheatingText = document.getElementsByClassName("cheating")[0];
+  if (btn.innerText === "カンニング") {
+    cheatingText.style.display = "flex";
+    btn.innerText = "非表示"
+  } else {
+    cheatingText.style.display = "none";
+    btn.innerText = "カンニング"
+  }
+})
