@@ -1,8 +1,22 @@
 .gray-box {
   background-color: gray;
+  margin: auto;
+  /* width: 1000px; */
+  height: auto;
+  padding: 10px;
 }
 
 #car-image {
   position: relative;
-  margin: 0 auto;
+  margin: auto;
+  display: flex;
+  /* width: 990px; */
+  width: 60%;
+  /* height: auto; */
+  height: 60%;
+}
+
+#text-show {
+  /* position: relative; */
+  text-align: center;
 }
