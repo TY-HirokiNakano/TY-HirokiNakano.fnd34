@@ -38,9 +38,16 @@ imgOfCar.addEventListener("click",function(event) {
 // const hoodYMin = 70;
 // const hoodYMax = 120;
 
+// const arrayOfPartArea = [
+//   {partName: "フード", xMin: 140, xMax: 370, yMin: 160, yMax: 270}, 
+//   {partName: "グリル", xMin: 130, xMax: 310, yMin: 320, yMax: 390},
+//   {partName: "ヘッドランプ", xMin: 130, xMax: 310, yMin: 320, yMax: 390}
+// ]
 const arrayOfPartArea = [
-  {partName: "フード", xMin: 60, xMax: 160, yMin: 70, yMax: 120}, 
-  {partName: "グリル", xMin: 60, xMax: 135, yMin: 140, yMax: 165}
+  {partName: "フード", xMin: 0.15, xMax: 0.36, yMin: 0.29, yMax: 0.52}, 
+  {partName: "グリル", xMin: 0.14, xMax: 0.31, yMin: 0.61, yMax: 0.75},
+  {partName: "ヘッドランプ", xMin: 0.40, xMax: 0.46, yMin: 0.36, yMax: 0.50},
+  {partName: "ヘッドランプ", xMin: 0.07, xMax: 0.13, yMin: 0.33, yMax: 0.48}
 ]
 
 
@@ -50,19 +57,26 @@ imgOfCar.addEventListener("mousemove",function(event) {
   // 画像に対するマウスカーソルの相対位置を取得する
   const x = event.clientX - rect.left;
   const y = event.clientY - rect.top;
-  console.log(`${x}, ${y}`);
+  // imgOfCar.style.width
+  // 画像サイズに対する比率に変換する
+  // const xRatio = x / 990;   //990を変数にしたい
+  // const yRatio = y / 520;   //520を変数にしたい
+  const xRatio = x / imgOfCar.width;
+  const yRatio = y / imgOfCar.height;
+  // console.log(`${x}, ${y}`);
+  console.log(`${xRatio}, ${yRatio}`);
+
   for (const obj of arrayOfPartArea) {
-    if (obj.xMin < x 
-      && x < obj.xMax 
-      && obj.yMin < y 
-      && y < obj.yMax) {
-        console.log(obj.partName);
+    if (obj.xMin < xRatio && xRatio < obj.xMax 
+      && obj.yMin < yRatio && yRatio < obj.yMax) {
+        // console.log(obj.partName);
+        console.log(`ここは${obj.partName}です`);
+        // textPointedPart.innerText = "";
         textPointedPart.innerText = `ここは${obj.partName}です`;
-      // } else if (obj.xMin < x) {
-      //   console.log(obj.partName);
-      //   textPointedPart.innerText = `ここは${obj.partName}です`;        
+        // 見つけたらループを抜ける
+        break;
       } else {
-        textPointedPart.innerText = "";
+        // textPointedPart.innerText = "";
         textPointedPart.innerText = "ここは部位を設定していません";
     }
   }
