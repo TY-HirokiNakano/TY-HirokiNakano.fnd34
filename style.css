@@ -16,7 +16,39 @@
   height: 60%;
 }
 
+#copyrigtht {
+  margin: auto;
+  padding-right: 300px;
+  text-align: right;
+}
+
 #text-show {
   /* position: relative; */
   text-align: center;
+}
+
+.button {
+  margin: 5px;
+  text-align: right;
+}
+
+.cheating {
+  display: flex;
+  margin-top: 40px;
+  padding: auto;
+  display: none;
+}
+
+#study {
+  margin: auto;
+  background-color: rgb(142, 245, 245);
+  border-radius: 15px;
+  padding-right: 30px;
+}
+
+#next {
+  margin: auto;
+  background-color: rgb(252, 231, 150);
+  border-radius: 15px;
+  padding-right: 30px;
 }
